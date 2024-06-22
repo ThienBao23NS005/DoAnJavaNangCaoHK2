@@ -1,0 +1,78 @@
+package model;
+
+import java.io.Serializable;
+
+public class User implements Serializable {
+    private String id;
+    private String nameLogin;
+    private String name;
+    private String password;
+    private Boolean isConnected;
+    private Boolean hasNewMessage = false;
+
+    public User(String id, String nameLogin, String name, String password) {
+        this.id = id;
+        this.nameLogin = nameLogin;
+        this.name = name;
+        this.password = password;
+    }
+
+    public User(String nameLogin, String name, String password) {
+        this.nameLogin = nameLogin;
+        this.name = name;
+        this.password = password;
+    }
+
+    public Boolean getHasNewMessage() {
+        return hasNewMessage;
+    }
+
+    public void setHasNewMessage(Boolean hasNewMessage) {
+        this.hasNewMessage = hasNewMessage;
+    }
+
+    public Boolean getConnected() {
+        return isConnected;
+    }
+
+    public void setConnected(Boolean connected) {
+        isConnected = connected;
+    }
+
+    public String getNameLogin() {
+        return nameLogin;
+    }
+
+    public void setNameLogin(String nameLogin) {
+        this.nameLogin = nameLogin;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return this.name + " - " + this.isConnected;
+    }
+}
